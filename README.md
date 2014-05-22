@@ -36,9 +36,9 @@ with the boundary conditions
 
 with the boundary conditions 
 
-    u1(0)=0, u1(1)=1
-    u2(0)=1, u2(1)=0
-    u3(0)=0, u3(1)=0
+    u1(0) = 0,  u1(1) = 1
+    u2(0) = 1,  u2(1) = 0
+    u3(0) = 0,  u3(1) = 0
 
 ---
 
@@ -48,7 +48,26 @@ with the boundary conditions
 
 with a given initial condition and homogeneous Neumann conditons
 
-    u_x(-1)=u_x(+1)=0
+    u_x(-1) = u_x(+1) = 0
+
+---
+
+`newton.py' solves the nonlinear boundary value problem
+
+    (exp(a*u)*u')' = 0
+    u(0) = 0, u(1) = 1
+
+Using a manual Newton's method with continuation/homotopy
+
+---
+
+`newton_sys2.py' solves the two coupled nonlinear boundary value problems
+
+    -u1" + a*exp(u2)*u1 = 0
+    -u2" + a*exp(u1)*u2 = 0
+
+    u1(0) = 0,  u1(1) = 1
+    u2(1) = 1,  u2(0) = 0    
 
 ---
 
