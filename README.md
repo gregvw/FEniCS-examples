@@ -74,7 +74,25 @@ Using a manual Newton's method with continuation/homotopy
 `finite_well.py` computes eigenvalues and eigenfunctions for 
 a finite potential quantum well. 
 
+---
 
+'nonuniform.py' constructs a nonuniform 1D grid with clustering at 
+desired locations and then solves a boundary value problem which has
+a rapidly varying solution at those locations. 
+
+    -[p(x)u']' = 1 
+
+     u(0) = u(1) = 0
+ 
+     p(x) = 1.001 + cos(4*pi*x)
+
+---
+
+'quantum_dot.py' computes the ground state in a hemispherical quantum
+dot using the imaginary time step method with repeated Cholesky solves
+via PETScLUSolver
+
+    
 
 
 
