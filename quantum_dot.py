@@ -67,13 +67,16 @@ if __name__ == '__main__':
     # Hamiltonian and mass matrix forms
     h = (u_r*v_r+u_z*v_z)*r*(drdz(0)+drdz(1))+potential*r*u*v*r*drdz(0)
     m = (u*v*r)*(drdz(0)+drdz(1))
-    
+   
+    # Mass matrix 
     M = df.PETScMatrix()
     df.assemble(m,tensor=M)
 
+    # Hamiltonian matrix
     H = df.PETScMatrix()
     df.assemble(h,tensor=H)
  
+    # Solution
     psi = df.Function(V)
     solver = df.PETScLUSolver(H)
     solver.parameters['symmetric'] = True
@@ -82,6 +85,7 @@ if __name__ == '__main__':
  
     q = psi.vector()
     
+    # Do inverse iteration
     for k in range(5):
         Mq = M*q
         qHq = q.inner(H*q)
