@@ -89,8 +89,7 @@ a rapidly varying solution at those locations.
 ---
 
 'quantum_dot.py' computes the ground state in a hemispherical quantum
-dot using the imaginary time step method with repeated Cholesky solves
-via PETScLUSolver
+dot using the inverse iteration with repeated Cholesky solves via PETScLUSolver
 
     
 
