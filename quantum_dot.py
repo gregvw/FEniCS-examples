@@ -21,10 +21,10 @@ if __name__ == '__main__':
     z_dom_max = 2
 
     # Number of cells in the radial direction
-    nr = 100
+    nr = 200
  
     # Number of cells in the radial direction
-    nz = 100   
+    nz = 200   
 
     mesh = df.RectangleMesh(0,z_dom_min,r_dom,z_dom_max,nr,nz)
 
@@ -39,10 +39,7 @@ if __name__ == '__main__':
     domains.set_all(0)
     quantumDot.mark(domains,1)
 
-    boundaries = df.FacetFunction("size_t",mesh)
-    boundaries.set_all(0)
-
-    V = df.FunctionSpace(mesh,"CG",2)
+    V = df.FunctionSpace(mesh,"CG",1)
 
     u = df.TrialFunction(V)
     v = df.TestFunction(V)     
